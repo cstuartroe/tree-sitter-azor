@@ -1,17 +1,19 @@
 {
   "name": "tree-sitter-azor",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "A tree-sitter grammar for Azor",
   "main": "bindings/node",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/cstuartroe/tree-sitter-azor",
   "author": "Conor Stuart-Roe",
   "license": "ISC",
-  "dependencies": {
-    "nan": "^2.14.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "tree-sitter-cli": "^0.19.4"
+    "electron": "^6.1.12",
+    "electron-rebuild": "^2.3.5",
+    "nan": "^2.14.2",
+    "tree-sitter-cli": "^0.16.9"
   }
 }

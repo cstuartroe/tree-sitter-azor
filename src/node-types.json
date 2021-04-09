@@ -52,11 +52,6 @@
     }
   },
   {
-    "type": "comment",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "comparator",
     "named": true,
     "fields": {}
