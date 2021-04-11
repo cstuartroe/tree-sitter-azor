@@ -84,7 +84,7 @@ module.exports = grammar({
 
         prec(0, $.if),
         prec(0, $.let),
-        $.not,
+        $.prefix,
         $.call,
         $.generic_resolution,
 
@@ -130,6 +130,7 @@ module.exports = grammar({
         $.numeric,
         $.bool,
         $.string,
+        $.char,
     ),
 
     identifier: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
@@ -137,6 +138,8 @@ module.exports = grammar({
     numeric: $ => /-?(0|[1-9][0-9]*)/,
 
     bool: $ => choice('true', 'false'),
+
+    char: $ => /'([ \t\w0-9!#$%&'()*+,-./:;<=>?@\[\]^_`{|}~]|\\\\|\\t|\\r|\\n|\\")'/,
 
     string: $ => /"([ \t\w0-9!#$%&'()*+,-./:;<=>?@\[\]^_`{|}~]|\\\\|\\t|\\r|\\n|\\")*"/,
 
@@ -230,8 +233,8 @@ module.exports = grammar({
         ')',
     ),
 
-    not: $ => prec(5, seq(
-        '!',
+    prefix: $ => prec(5, seq(
+        choice('!', '-'),
         $.expression,
     )),
 
