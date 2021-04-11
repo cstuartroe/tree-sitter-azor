@@ -135,7 +135,7 @@ module.exports = grammar({
 
     identifier: $ => /[_a-zA-Z][_a-zA-Z0-9]*/,
 
-    numeric: $ => /-?(0|[1-9][0-9]*)/,
+    numeric: $ => /(0|[1-9][0-9]*)/,
 
     bool: $ => choice('true', 'false'),
 
